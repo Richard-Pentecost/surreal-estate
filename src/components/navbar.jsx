@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/navbar.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,8 +13,8 @@ const NavBar = () => {
       <div className="textLogo">
         <FontAwesomeIcon icon="adjust" />
         <ul className="nav">
-          <li className="item">View Properties</li>
-          <li className="item">Add a Property</li>
+          <Link to="/" className="item">View Properties</Link>
+          <Link to="/add-property" className="item">Add a Property</Link>
         </ul>
       </div>
     </div>
