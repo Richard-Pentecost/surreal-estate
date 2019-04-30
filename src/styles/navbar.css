@@ -17,11 +17,13 @@
   padding: 0 10px;
   margin: 0;
   display: inline-block;
-  cursor: crosshair;
+  /* cursor: crosshair; */
+}
+
+.link {
   text-decoration: none;
   color: black;
 }
-
 .item:hover {
   background-color: grey;
 }

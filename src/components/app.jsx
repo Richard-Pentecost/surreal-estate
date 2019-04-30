@@ -3,7 +3,6 @@ import { Switch, Route } from 'react-router-dom';
 import NavBar from './navbar';
 import Properties from './properties';
 import AddProperty from './add-property';
-
 import '../styles/app.css';
 
 const App = () => {

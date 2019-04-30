@@ -13,8 +13,8 @@ const NavBar = () => {
       <div className="textLogo">
         <FontAwesomeIcon icon="adjust" />
         <ul className="nav">
-          <Link to="/" className="item">View Properties</Link>
-          <Link to="/add-property" className="item">Add a Property</Link>
+          <li className="item"><Link to="/" className="link">View Properties</Link></li>
+          <li className="item"><Link to="/add-property" className="link">Add a Property</Link></li>
         </ul>
       </div>
     </div>
