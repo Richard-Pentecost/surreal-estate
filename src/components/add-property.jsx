@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/add-property.css';
+import { ECONNRESET } from 'constants';
 
 class AddProperty extends React.Component {
   constructor(props) {
@@ -7,18 +8,16 @@ class AddProperty extends React.Component {
     this.state = {
       fields: {
         title: '',
-        type: 'Manchester',
       },
     };
   }
 
   handleAddProperty = (event) => {
     event.preventDefault();
-    console.log(this.state.fields);
+    // console.log(this.state.fields);
   };
 
   handleFieldChange = (event) => {
-    console.log(event.target.name);
     console.log(event.target.value);
   };
 
@@ -26,7 +25,7 @@ class AddProperty extends React.Component {
     return (
       <div className="addProperty">
         <form onSubmit={this.handleAddProperty}>
-          <input name="title" value={this.state.fields.title} onChange={this.handleFieldChange} />
+          <input type="text" name="title" value={this.state.fields.title} onChange={this.handleFieldChange} />
           <select name="type" value={this.state.fields.type} onChange={this.handleFieldChange}>
             <option value="flat">Flat</option>
             <option value="detached">Detached</option>
