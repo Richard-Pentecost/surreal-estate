@@ -8,7 +8,7 @@ describe('alert component', () => {
     const wrapper = shallow((
       <Alert message={error} />
     ));
-    expect(wrapper.find('.message').text()).toBe('Error!');
+    expect(wrapper.find('div').text()).toBe('Error!');
   });
   it('passes an error into the Alert components', () => {
     const success = 'Success!';
@@ -16,6 +16,6 @@ describe('alert component', () => {
       <Alert message={success} />
     ));
     console.log(wrapper.debug());
-    expect(wrapper.find('.message').text()).toBe('Success!');
+    expect(wrapper.find('div').text()).toBe('Success!');
   });
 });
