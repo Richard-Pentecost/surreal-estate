@@ -1,5 +1,8 @@
 import React from 'react';
 import '../styles/add-property.css';
+import axios from 'axios';
+
+const URL = 'http://localhost:3000/api/v1';
 
 class AddProperty extends React.Component {
   constructor(props) {
@@ -19,7 +22,22 @@ class AddProperty extends React.Component {
 
   handleAddProperty = (event) => {
     event.preventDefault();
-    console.log(this.state.fields);
+    const { fields } = this.state;
+    axios.post(`${URL}/PropertyListing/`, {
+      title: fields.title,
+      type: fields.type,
+      bedrooms: fields.bedrooms,
+      bathrooms: fields.bathrooms,
+      price: fields.price,
+      city: fields.city,
+      email: fields.email,
+    })
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => {
+        console.log(error, 'from error');
+      });
   };
 
   handleFieldChange = (event) => {
@@ -52,9 +70,9 @@ class AddProperty extends React.Component {
           <label>Bathrooms:</label>
           <input type="number" name="bathrooms" value={this.state.fields.bathrooms} onChange={this.handleFieldChange} />
           <label>Price:</label>
-          <input type="text" name="price" value={this.state.fields.price} onChange={this.handleFieldChange} />
+          <input type="number" name="price" value={this.state.fields.price} onChange={this.handleFieldChange} />
           <label>email:</label>
-          <input type="email" name="email" value={this.state.fields.email} onChange={this.handleFieldChange} />
+          <input type="string" name="email" value={this.state.fields.email} onChange={this.handleFieldChange} />
           <label>City</label>
           <select name="city" value={this.state.fields.city} onChange={this.handleFieldChange}>
             <option value="Manchester">Manchester</option>
