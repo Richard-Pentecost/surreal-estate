@@ -54,7 +54,7 @@ class AddProperty extends React.Component {
       <div className="addProperty">
         <form className="addPropertyForm" onSubmit={this.handleAddProperty}>
           <label>Title:</label>
-          <input type="text" name="title" value={this.state.fields.title} onChange={this.handleFieldChange} />
+          <input type="text" name="title" value={this.state.fields.title} onChange={this.handleFieldChange} placeholder="description" />
           <label>Type:</label>
           <select name="type" value={this.state.fields.type} onChange={this.handleFieldChange}>
             <option value="Flat">Flat</option>
@@ -66,13 +66,13 @@ class AddProperty extends React.Component {
             <option value="Bungalow">Bungalow</option>
           </select>
           <label>Bedrooms:</label>
-          <input type="number" name="bedrooms" value={this.state.fields.bedrooms} onChange={this.handleFieldChange} />
+          <input type="number" name="bedrooms" value={this.state.fields.bedrooms} onChange={this.handleFieldChange} placeholder="No. of bedrooms" />
           <label>Bathrooms:</label>
-          <input type="number" name="bathrooms" value={this.state.fields.bathrooms} onChange={this.handleFieldChange} />
+          <input type="number" name="bathrooms" value={this.state.fields.bathrooms} onChange={this.handleFieldChange} placeholder="No. of bathrooms" />
           <label>Price:</label>
-          <input type="number" name="price" value={this.state.fields.price} onChange={this.handleFieldChange} />
+          <input type="number" name="price" value={this.state.fields.price} onChange={this.handleFieldChange} placeholder="Price" />
           <label>email:</label>
-          <input type="string" name="email" value={this.state.fields.email} onChange={this.handleFieldChange} />
+          <input type="string" name="email" value={this.state.fields.email} onChange={this.handleFieldChange} placeholder="Email" />
           <label>City</label>
           <select name="city" value={this.state.fields.city} onChange={this.handleFieldChange}>
             <option value="Manchester">Manchester</option>

@@ -1,5 +1,12 @@
 .addProperty {
   width: 50%;
+  border: 2px solid black;
+  margin: auto;
+  background: white;
+}
+
+input, select {
+  width: 95%;
 }
 
 .addPropertyForm {

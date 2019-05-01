@@ -1,12 +1,15 @@
 .navbar {
   color: white;
-  font-size: 1.5em;
+  font-size: 1.2em;
   padding-left: 10px;
   border-bottom: 2px solid black;
 }
 .textLogo {
   display: inline-block;
   padding: 10px 10px 10px 0px;
+}
+.companyName {
+  padding: 10px;
 }
 .nav {
   padding: 0;
