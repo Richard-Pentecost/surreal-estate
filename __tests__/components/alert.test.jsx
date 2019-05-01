@@ -3,19 +3,19 @@ import { shallow } from 'enzyme';
 import Alert from '../../src/components/alert';
 
 describe('alert component', () => {
-  it('passes an error into the Alert components', () => {
+  it('renders an error message', () => {
     const error = 'Error!';
     const wrapper = shallow((
       <Alert message={error} />
     ));
-    expect(wrapper.find('div').text()).toBe('Error!');
+    expect(wrapper.find('.Alert').text()).toBe('Error!');
   });
-  it('passes an error into the Alert components', () => {
+  it('renders a success message', () => {
     const success = 'Success!';
     const wrapper = shallow((
-      <Alert message={success} />
+      <Alert message={success} success />
     ));
     console.log(wrapper.debug());
-    expect(wrapper.find('div').text()).toBe('Success!');
+    expect(wrapper.find('.Alert.success').text()).toBe('Success!');
   });
 });

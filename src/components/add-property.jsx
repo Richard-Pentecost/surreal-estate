@@ -41,15 +41,13 @@ class AddProperty extends React.Component {
       city: fields.city,
       email: fields.email,
     })
-      .then(response => {
-        console.log(response);
+      .then(() => {
         this.setState({
           alertMessage: 'Property Added',
           isSuccess: true,
         });
       })
-      .catch(error => {
-        console.log(error, 'from error');
+      .catch(() => {
         this.setState({
           alertMessage: 'Server error, please try again',
           isError: true,
@@ -70,8 +68,8 @@ class AddProperty extends React.Component {
     const { fields, isSuccess, isError, alertMessage } = this.state;
     return (
       <div className="addProperty">
-        {isSuccess && <Alert message={alertMessage} success="success" />}
-        {isError && <Alert message={alertMessage} success="error" />}
+        {isSuccess && <Alert message={alertMessage} success />}
+        {isError && <Alert message={alertMessage} />}
         <form className="addPropertyForm" onSubmit={this.handleAddProperty}>
           <label>Description:</label>
           <input type="text" name="title" value={fields.title} onChange={this.handleFieldChange} placeholder="description" />

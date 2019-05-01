@@ -1,9 +1,11 @@
 import React from 'react';
 import '../styles/alert.css';
 
-const Alert = (props) => {
+const Alert = ({ message, success }) => {
   return (
-    <div className={props.success}>{props.message}</div>
+    <div className={`Alert${success ? ' success' : ''}`}>
+      {message}
+    </div>
   );
 };
 
