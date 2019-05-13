@@ -65,7 +65,12 @@ class AddProperty extends React.Component {
   };
 
   render() {
-    const { fields, isSuccess, isError, alertMessage } = this.state;
+    const {
+      fields,
+      isSuccess,
+      isError,
+      alertMessage,
+    } = this.state;
     return (
       <div className="addProperty">
         {isSuccess && <Alert message={alertMessage} success />}

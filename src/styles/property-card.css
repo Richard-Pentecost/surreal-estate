@@ -1,3 +1,19 @@
 .property-card-div {
   border: 2px black solid;
+  width: 25%;
+  padding: 10px;
+  margin: 10px;
+}
+
+.property-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.main-icon-div {
+  display: flex;
+}
+.main-icon {
+  font-size: 2em;
+  justify-content: space-around;
 }
