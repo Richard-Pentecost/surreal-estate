@@ -1,4 +1,9 @@
-.sidebar {
+.city-filter {
+  display: flex;
+  justify-content: space-around;
+}
+
+.sort-by-price {
   display: flex;
   justify-content: space-around;
 }

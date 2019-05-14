@@ -4,6 +4,7 @@ import PropertyCard from './property-card';
 import Alert from './alert';
 import SideBar from './sidebar';
 import '../styles/properties.css';
+import qs from 'qs';
 
 const URL = 'http://localhost:3000/api/v1';
 
@@ -45,11 +46,29 @@ class Properties extends React.Component {
     }
   }
 
+  handleSearch = (searchValue) => {
+    const url = this.buildQueryString('query', { title: { $regex: searchValue } });
+    this.props.history.push(url);
+  };
+
+  buildQueryString = (operation, valueObj) => {
+    const { search } = this.props.location;
+    const currentQueryParams = qs.parse(search, { ignoreQueryPrefix: true });
+    const newQueryParams = {
+      ...currentQueryParams,
+      [operation]: JSON.stringify({
+        ...valueObj,
+      }),
+    };
+    console.log(newQueryParams);
+    return qs.stringify(newQueryParams, { addQueryPrefix: true, encode: false });
+  };
+
   render() {
     const { properties, isError, alertMessage } = this.state;
     return (
       <div className="properties-page">
-        <SideBar />
+        <SideBar query={this.buildQueryString} submitSearch={this.handleSearch} />
         <div className="properties-details">
           {isError && <Alert message={alertMessage} />}
           { !isError && properties.map(property => {

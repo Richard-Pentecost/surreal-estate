@@ -83,7 +83,7 @@ class AddProperty extends React.Component {
             <option value="Flat">Flat</option>
             <option value="Detached">Detached</option>
             <option value="Semi-detached">Semi-Detached</option>
-            <option value="Rerraced">Terraced</option>
+            <option value="Terraced">Terraced</option>
             <option value="End-of-terrace">End of Terrace</option>
             <option value="Cottage">Cottage</option>
             <option value="Bungalow">Bungalow</option>
