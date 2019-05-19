@@ -11,16 +11,46 @@ import '../styles/app.css';
 
 library.add(fab, fas, far);
 
-const App = () => {
-  return (
-    <React.Fragment>
-      <NavBar />
-      <Switch>
-        <Route exact path="/" component={Properties} />
-        <Route exact path="/add-property" component={AddProperty} />
-      </Switch>
-    </React.Fragment>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      userID: null,
+    };
+  }
+
+  handleLogin = (response) => {
+    this.setState({
+      userID: response.userID,
+    });
+  };
+
+  handleLogout = () => {
+    window.FB.logout();
+    this.setState({
+      userID: null,
+    });
+  };
+
+  render() {
+    return (
+      <React.Fragment>
+        <NavBar onLogin={this.handleLogin} onLogout={this.handleLogout} userID={this.state.userID} />
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={(props) => <Properties {...props} userID={this.state.userID} />}
+          />
+          <Route
+            exact
+            path="/add-property"
+            component={AddProperty}
+          />
+        </Switch>
+      </React.Fragment>
+    );
+  }
 };
 
 export default App;

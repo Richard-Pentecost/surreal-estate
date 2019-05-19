@@ -20,6 +20,14 @@ const PropertyCard = (props) => {
         <FontAwesomeIcon icon={['far', 'envelope']} className="icon" />
       </ul>
       <p className="property-card-email">{props.email}</p>
+      {
+        props.userID &&
+        (
+          <button onClick={() => props.onSaveProperty(props._id)}>
+            Save
+          </button>
+        )
+      }
     </div>
   );
 };

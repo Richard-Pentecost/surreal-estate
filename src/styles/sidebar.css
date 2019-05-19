@@ -1,9 +1,14 @@
-.city-filter {
+.sidebar {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
 }
 
-.sort-by-price {
-  display: flex;
-  justify-content: space-around;
+.city-filter, .sort-by-price {
+ list-style: none;
+ padding: 0;
 }
+
+.list-title {
+  font-weight: bold;
+}
+

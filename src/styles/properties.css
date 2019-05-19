@@ -1,6 +1,17 @@
-.properties-details {
+.properties-details, .properties-page {
   display: flex;
   flex-wrap: wrap;
+}
+
+.properties-details {
+  justify-content: flex-start;
+}
+
+SideBar {
+  width: 20%;
+}
+.properties-page {
+  width: 80%;
   justify-content: space-around;
   align-items: space-around;
 }

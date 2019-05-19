@@ -30,18 +30,18 @@ class SideBar extends React.Component {
             <button type="submit">Search</button>
           </form>
         </div>
-        <div className="city-filter">
-          Filter by City
-          <Link to={this.props.query('query', { city: 'Leeds' })}>Leeds</Link>
-          <Link to={this.props.query('query', { city: 'Liverpool' })}>Liverpool</Link>
-          <Link to={this.props.query('query', { city: 'Manchester' })}>Manchester</Link>
-          <Link to={this.props.query('query', { city: 'Sheffield' })}>Sheffield</Link>
-        </div>
-        <div className="sort-by-price">
-          Sort by
-          <Link to={this.props.query('sort', { price: 1 })}>Price Ascending</Link>
-          <Link to={this.props.query('sort', { price: -1 })}>Price Descending</Link>
-        </div>
+        <ul className="city-filter">
+          <li className="list-title">Filter by City</li>
+          <li><Link to={this.props.query('query', { city: 'Leeds' })}>Leeds</Link></li>
+          <li><Link to={this.props.query('query', { city: 'Liverpool' })}>Liverpool</Link></li>
+          <li><Link to={this.props.query('query', { city: 'Manchester' })}>Manchester</Link></li>
+          <li><Link to={this.props.query('query', { city: 'Sheffield' })}>Sheffield</Link></li>
+        </ul>
+        <ul className="sort-by-price">
+          <li className="list-title">Sort by</li>
+          <li><Link to={this.props.query('sort', { price: 1 })}>Price Ascending</Link></li>
+          <li><Link to={this.props.query('sort', { price: -1 })}>Price Descending</Link></li>
+        </ul>
       </div>
     );
   }

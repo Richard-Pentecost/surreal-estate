@@ -57,12 +57,21 @@ class Properties extends React.Component {
     const newQueryParams = {
       ...currentQueryParams,
       [operation]: JSON.stringify({
+        ...JSON.parse(currentQueryParams[operation] || '{}'),
         ...valueObj,
       }),
     };
-    console.log(newQueryParams);
     return qs.stringify(newQueryParams, { addQueryPrefix: true, encode: false });
   };
+
+  handleSaveProperty = (propertyID) => {
+    console.log(propertyID);
+    // axios.post(`${URL}/Favourite`, {
+    //   _id: propertyID,
+    //   propertyListing: propertyID,
+    //   fbUserID: propertyID,
+    // })
+  }
 
   render() {
     const { properties, isError, alertMessage } = this.state;
@@ -73,7 +82,12 @@ class Properties extends React.Component {
           {isError && <Alert message={alertMessage} />}
           { !isError && properties.map(property => {
             return (
-              <PropertyCard key={property._id} {...property} />
+              <PropertyCard
+                key={property._id}
+                {...property}
+                userID={this.props.userID}
+                onSaveProperty={this.handleSaveProperty}
+              />
             );
           })}
         </div>
