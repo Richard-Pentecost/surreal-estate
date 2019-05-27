@@ -77,7 +77,9 @@ class Properties extends React.Component {
     const { properties, isError, alertMessage } = this.state;
     return (
       <div className="properties-page">
-        <SideBar query={this.buildQueryString} submitSearch={this.handleSearch} />
+        <div className="sidebar">
+          <SideBar query={this.buildQueryString} submitSearch={this.handleSearch} />
+        </div>
         <div className="properties-details">
           {isError && <Alert message={alertMessage} />}
           { !isError && properties.map(property => {

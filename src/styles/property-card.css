@@ -1,19 +1,39 @@
-.property-card-div {
-  border: 2px black solid;
+.propertyCard {
+  background: white;
   width: 20%;
-  padding: 10px;
-  margin: 10px;
+  box-sizing: border-box;
+  padding: 2.5px;
+  margin: 5px;
 }
 
-.property-list {
-  list-style-type: none;
-  padding: 0;
+.propertyCard-header {
+  margin: 5px;
+  height: 80px;
+  background: #e6e6e6;
+  color: #732673;
+  text-align: center;
+  line-height: 80px;
 }
 
-.main-icon-div {
-  display: flex;
+.propertyCard-logo {
+  font-size: 1.5em;
 }
-.main-icon {
-  font-size: 2em;
-  justify-content: space-around;
+
+.propertyCard-div {
+  padding: 5px;
+}
+
+#propertyCard-type {
+  font-style: italic;
+}
+
+.propertyCard-icon {
+  margin-right: 5px;
+}
+
+#email-div {
+  margin: 5px;
+  background: #732673;
+  text-align: center;
+  color: white;
 }

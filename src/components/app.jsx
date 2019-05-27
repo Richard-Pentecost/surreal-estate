@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import NavBar from './navbar';
 import Properties from './properties';
 import AddProperty from './add-property';
@@ -34,21 +34,23 @@ class App extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
-        <NavBar onLogin={this.handleLogin} onLogout={this.handleLogout} userID={this.state.userID} />
-        <Switch>
-          <Route
-            exact
-            path="/"
-            render={(props) => <Properties {...props} userID={this.state.userID} />}
-          />
-          <Route
-            exact
-            path="/add-property"
-            component={AddProperty}
-          />
-        </Switch>
-      </React.Fragment>
+      <Router>
+        <React.Fragment>
+          <NavBar onLogin={this.handleLogin} onLogout={this.handleLogout} userID={this.state.userID} />
+          <Switch>
+            <Route
+              exact
+              path="/"
+              render={(props) => <Properties {...props} userID={this.state.userID} />}
+            />
+            <Route
+              exact
+              path="/add-property"
+              component={AddProperty}
+            />
+          </Switch>
+        </React.Fragment>
+      </Router>
     );
   }
 };
