@@ -12,6 +12,7 @@ const NavBar = (props) => {
         <span className="companyName">Surreal Estate</span>
         <ul className="nav">
           <li className="item"><Link to="/" className="link">View Properties</Link></li>
+          {props.userID && <li className="item"><Link to="/saved-properties" className="link">Saved Properties</Link></li>}
           <li className="item"><Link to="/add-property" className="link">Add a Property</Link></li>
         </ul>
         <div className="loginButton">

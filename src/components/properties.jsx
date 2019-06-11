@@ -65,13 +65,17 @@ class Properties extends React.Component {
   };
 
   handleSaveProperty = (propertyID) => {
-    console.log(propertyID);
-    // axios.post(`${URL}/Favourite`, {
-    //   _id: propertyID,
-    //   propertyListing: propertyID,
-    //   fbUserID: propertyID,
-    // })
-  }
+    axios.post(`${URL}/Favourite`, {
+      propertyListing: propertyID,
+      fbUserId: this.props.userID,
+    })
+      .then(response => {
+        console.log(response);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
 
   render() {
     const { properties, isError, alertMessage } = this.state;

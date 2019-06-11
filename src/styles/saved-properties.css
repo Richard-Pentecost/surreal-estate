@@ -1,0 +1,19 @@
+.favourite {
+  background: white;
+  padding: 10px;
+  margin: 5px;
+}
+
+.favourite span {
+  font-weight: bold;
+}
+
+.favourite button {
+  float: right;
+  background: red;
+  color: white;
+  border: 0px;
+  border-radius: 2px;
+  height: 30px;
+  width: 60px;
+}
