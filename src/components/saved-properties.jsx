@@ -11,10 +11,19 @@ class SavedProperties extends Component {
       properties: [],
       isError: false,
       alertMessage: '',
+      deleteError: false,
     };
   }
 
   componentDidMount() {
+    this.getFavourites();
+  }
+
+  handleRemove = (favouriteId) => {
+    this.deleteFavourite(favouriteId);
+  };
+
+  getFavourites = () => {
     axios.get(`${URL}/Favourite/?populate=propertyListing`)
       .then(({ data: properties }) => {
         this.setState({
@@ -27,7 +36,20 @@ class SavedProperties extends Component {
           alertMessage: 'Server error, please try again.',
         });
       });
-  }
+  };
+
+  deleteFavourite = (favouriteId) => {
+    axios.delete(`${URL}/Favourite/${favouriteId}`)
+      .then(() => {
+        this.getFavourites();
+      })
+      .catch((err) => {
+        console.log('error');
+        this.setState({
+          deleteError: true,
+        });
+      });
+  };
 
   render() {
     const { properties } = this.state;
@@ -37,7 +59,7 @@ class SavedProperties extends Component {
           return (
             <div className="favourite" key={property._id}>
               <span>{property.propertyListing.title}</span>
-              <button>Remove</button>
+              <button onClick={() => this.handleRemove(property._id)}>Remove</button>
             </div>
           );
         })}
