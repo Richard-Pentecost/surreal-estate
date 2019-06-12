@@ -29,9 +29,16 @@ const PropertyCard = (props) => {
       {
         props.userID &&
         (
-          <button onClick={() => props.onSaveProperty(props._id)}>
-            Save
-          </button>
+          <a
+            href="#"
+            onClick={() => props.onSaveProperty(props._id)}
+            className="save"
+          >
+            <FontAwesomeIcon icon={['fas', 'star']} />Save
+          </a>
+          // <button onClick={() => props.onSaveProperty(props._id)}>
+          //   Save
+          // </button>
         )
       }
     </div>
