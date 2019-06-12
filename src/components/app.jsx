@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import NavBar from './navbar';
 import Properties from './properties';
 import AddProperty from './add-property';
@@ -11,6 +11,8 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 import '../styles/app.css';
 
 library.add(fab, fas, far);
+
+const RedirectToHome = () => <Redirect to="/" />;
 
 class App extends React.Component {
   constructor(props) {
@@ -34,6 +36,7 @@ class App extends React.Component {
   };
 
   render() {
+
     return (
       <Router>
         <React.Fragment>
@@ -52,7 +55,14 @@ class App extends React.Component {
             <Route
               exact
               path="/saved-properties"
-              render={(props) => <SavedProperties {...props} userID={this.state.userID} />}
+              render={(props) => {
+                return (
+                  this.state.userID ?
+                    <SavedProperties {...props} userID={this.state.userID} />
+                    :
+                    <Redirect to="/" />
+                );
+              }}
             />
           </Switch>
         </React.Fragment>

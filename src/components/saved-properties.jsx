@@ -16,6 +16,7 @@ class SavedProperties extends Component {
   }
 
   componentDidMount() {
+    console.log('In saved properties component');
     this.getFavourites();
   }
 

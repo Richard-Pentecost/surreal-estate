@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import FacebookLogin from 'react-facebook-login';
 
 const NavBar = (props) => {
-  console.log(props.userID);
   return (
     <div className="navbar">
       <div className="textLogo">
