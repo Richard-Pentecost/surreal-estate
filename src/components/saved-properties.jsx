@@ -8,7 +8,7 @@ class SavedProperties extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      properties: [],
+      favourites: [],
       isError: false,
       alertMessage: '',
       deleteError: false,
@@ -25,9 +25,9 @@ class SavedProperties extends Component {
 
   getFavourites = () => {
     axios.get(`${URL}/Favourite/?populate=propertyListing`)
-      .then(({ data: properties }) => {
+      .then(({ data: favourites }) => {
         this.setState({
-          properties,
+          favourites,
         });
       })
       .catch(() => {
@@ -52,14 +52,14 @@ class SavedProperties extends Component {
   };
 
   render() {
-    const { properties } = this.state;
+    const { favourites } = this.state;
     return (
       <Fragment>
-        {properties.map(property => {
+        {favourites.map(favourite => {
           return (
-            <div className="favourite" key={property._id}>
-              <span>{property.propertyListing.title}</span>
-              <button onClick={() => this.handleRemove(property._id)}>Remove</button>
+            <div className="favourite" key={favourite._id}>
+              <span>{favourite.propertyListing.title}</span>
+              <button onClick={() => this.handleRemove(favourite._id)}>Remove</button>
             </div>
           );
         })}
