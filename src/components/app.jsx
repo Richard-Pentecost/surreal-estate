@@ -12,8 +12,6 @@ import '../styles/app.css';
 
 library.add(fab, fas, far);
 
-const RedirectToHome = () => <Redirect to="/" />;
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -36,7 +34,6 @@ class App extends React.Component {
   };
 
   render() {
-
     return (
       <Router>
         <React.Fragment>

@@ -16,8 +16,13 @@ class SavedProperties extends Component {
   }
 
   componentDidMount() {
-    console.log('In saved properties component');
     this.getFavourites();
+  }
+
+  componentWillUpdate(prevProps) {
+    if (this.props.userID !== prevProps.userID) {
+      this.getFavourites();
+    }
   }
 
   handleRemove = (favouriteId) => {
@@ -26,7 +31,8 @@ class SavedProperties extends Component {
 
   getFavourites = () => {
     axios.get(`${URL}/Favourite/?populate=propertyListing`)
-      .then(({ data: favourites }) => {
+      .then(({ data }) => {
+        const favourites = data.filter(favourite => favourite.fbUserId === this.props.userID);
         this.setState({
           favourites,
         });
