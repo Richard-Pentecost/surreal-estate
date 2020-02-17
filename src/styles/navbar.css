@@ -1,0 +1,45 @@
+.navbar {
+  background: white;
+}
+
+.logo {
+  padding-right: 5px;
+  color: #732673;
+}
+
+.textLogo {
+  display: inline-block;
+  padding: 10px;
+  font-size: 1.25em;
+}
+
+.companyName {
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.nav {
+  padding-left: 20px;
+  margin: 0;
+  display: inline-block;
+}
+
+.item {
+  padding: 10px 5px;
+  margin: 0;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+}
+.item:hover {
+  background-color: lightgray;
+}
+
+.loginButton {
+  display: inline-block;
+  align-self: flex-end;
+}

@@ -1,0 +1,39 @@
+.propertyCard {
+  background: white;
+  width: 20%;
+  box-sizing: border-box;
+  padding: 2.5px;
+  margin: 5px;
+}
+
+.propertyCard-header {
+  margin: 5px;
+  height: 80px;
+  background: #e6e6e6;
+  color: #732673;
+  text-align: center;
+  line-height: 80px;
+}
+
+.propertyCard-logo {
+  font-size: 1.5em;
+}
+
+.propertyCard-div {
+  padding: 5px;
+}
+
+#propertyCard-type {
+  font-style: italic;
+}
+
+.propertyCard-icon {
+  margin-right: 5px;
+}
+
+#email-div {
+  margin: 5px;
+  background: #732673;
+  text-align: center;
+  color: white;
+}

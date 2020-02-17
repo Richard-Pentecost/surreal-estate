@@ -1,0 +1,7 @@
+.Alert {
+  color: red;
+}
+
+.Alert.success {
+  color: green;
+}
